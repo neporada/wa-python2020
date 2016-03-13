@@ -3,6 +3,9 @@ class Book:
     """
 
     def __init__(self, title, year, genre):
+        self.name = title
+        self.year = year
+        self.genre = genre
         """Конструктор
 
         Задание: сохраните title, year и genre в виде
@@ -10,6 +13,8 @@ class Book:
         """
 
     def __repr__(self):
+        return 'Book( ({!r}), ({!r}), ({!r}))'.format(self.name, self.year, self.genre)
+
         """Возвращает внутреннее строковое представление объекта
         для консоли, отладчика и т.д.
 
@@ -18,6 +23,7 @@ class Book:
         """
 
     def __str__(self):
+        return self.name
         """Возвращает строку, предназначенную для пользователя
         (str, print и т.д.)
 
@@ -27,3 +33,7 @@ class Book:
 
 # Задание: создайте несколько объектов класса Book
 # и выведите их на экран
+
+first_book = Book('Robin Hood', 1457, 'fairytales')
+second_book = Book('History for everyone', 2009, 'education')
+print(first_book,',', second_book)
